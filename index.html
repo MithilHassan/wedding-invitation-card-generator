@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Card | Generator</title>
+    <!-- FontAwesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container start">
+      <div class="image">
+        <img src="./images/img.jpg" alt="" />
+      </div>
+      <div class="info">
+        <div>
+          <h3>Wedding Invitation Wording Tool</h3>
+          <p>
+            Find the perfect wording for your wedding invitation in just a few
+            steps.
+          </p>
+        </div>
+        <span onclick="goToStep1()" id="start" class="btn">Get Started</span>
+      </div>
+    </div>
+    <form id="form" class="container step1">
+      <h3 class="title">Who's Getting Married?</h3>
+      <div class="form">
+        <label for="name1">FULL NAME</label>
+        <input
+          onblur="getName(this)"
+          class="input"
+          name="name1"
+          type="text"
+          id="name1"
+          placeholder="Enter full name"
+          required
+        />
+        <p>and</p>
+        <label for="name2">FULL NAME</label>
+        <input
+          onblur="getName(this)"
+          class="input"
+          name="name2"
+          type="text"
+          id="name2"
+          placeholder="Enter full name"
+          required
+        />
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStart()"
+          class="back"
+          value="&#60; Back"
+        />
+        <input
+          type="submit"
+          for="form1"
+          onclick="goToStep2()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <form class="container step2">
+      <h3 class="title">Who’s Hosting the Wedding?</h3>
+      <div class="form">
+        <label>
+          <input type="radio" name="radio" data-index="1" /><span
+            class="option1"
+          ></span>
+        </label>
+
+        <label>
+          <input type="radio" name="radio" data-index="2" /><span
+            class="option2"
+          ></span>
+        </label>
+
+        <label>
+          <input type="radio" name="radio" data-index="3" /><span
+            class="option3"
+          ></span>
+        </label>
+
+        <label
+          ><input type="radio" name="radio" data-index="4" />
+          <span class="option4">Both sets of parents.</span>
+        </label>
+
+        <label>
+          <input type="radio" name="radio" data-index="5" />
+          <span class="option5">Together with their families.</span>
+        </label>
+
+        <label
+          ><input type="radio" name="radio" data-index="6" />
+          <span class="option6">Other.</span>
+        </label>
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep1()"
+          class="back"
+          value="&#60; Back"
+        />
+        <div class="error">Please Select an option</div>
+        <input
+          type="button"
+          onclick="goToStep3()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <form id="form3" class="container step3_1">
+      <h3 class="title">Will Your Wedding's Tone Be Casual or Formal?</h3>
+      <div class="form">
+        <div class="wrapper">
+          <label>
+            <input
+              class="casual"
+              type="radio"
+              name="wedding-tone"
+              data-index="1"
+            />
+            <span class="custom-radio">
+              <i class="fas fa-check-circle"></i>
+              <div class="radio-image">
+                <img src="./images/icon-casual.png" alt="img_juice" />
+                <p>Casual</p>
+              </div>
+            </span>
+          </label>
+          <label>
+            <input
+              class="formal"
+              type="radio"
+              name="wedding-tone"
+              data-index="2"
+            />
+            <span class="custom-radio">
+              <i class="fas fa-check-circle"></i>
+              <div class="radio-image">
+                <img src="./images/icon-Formal.png" alt="img_drinks" />
+                <p>Formal</p>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep2()"
+          class="back"
+          value="&#60; Back"
+        />
+        <div class="error">Please Select an option</div>
+        <input
+          type="submit"
+          for="form3"
+          onclick="goToStep4()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <form class="container step3_2">
+      <h3 class="title">Custom Hosts</h3>
+      <div class="form">
+        <label for="parentsName1">FULL NAME</label>
+        <input
+          onblur="getParentsName(this)"
+          class="input"
+          name="name1"
+          type="text"
+          id="parentsName1"
+          placeholder="Enter full name"
+          required
+        />
+        <p>and</p>
+        <label for="parentsName2">FULL NAME</label>
+        <input
+          onblur="getParentsName(this)"
+          class="input"
+          name="name2"
+          type="text"
+          id="parentsName2"
+          placeholder="Enter full name"
+          required
+        />
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep2()"
+          class="back"
+          value="&#60; Back"
+        />
+        <input
+          type="button"
+          onclick="goToStep3_1()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <form class="container step4">
+      <h3 class="title"></h3>
+      <div class="form">
+        <label>
+          <input type="radio" name="intro" data-index="1" /><span
+            class="option1"
+          ></span>
+        </label>
+
+        <label>
+          <input type="radio" name="intro" data-index="2" /><span
+            class="option2"
+          ></span>
+        </label>
+
+        <label>
+          <input type="radio" name="intro" data-index="3" /><span
+            class="option3"
+          ></span>
+        </label>
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep3_1()"
+          class="back"
+          value="&#60; Back"
+        />
+        <div class="error">Please Select an option</div>
+        <input
+          type="button"
+          onclick="goToStep5()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <form id="form5" class="container step5">
+      <h3 class="title">Venue Information</h3>
+      <p class="subtitle">Add details about your venue</p>
+      <div class="form">
+        <div class="flex">
+          <div>
+            <label for="date">Date</label>
+            <input onblur="getDate(this)" type="date" id="date" />
+          </div>
+          <div>
+            <label for="time">Time</label>
+            <input type="time" id="time" />
+          </div>
+        </div>
+        <label for="venue">VENUE NAME</label>
+        <input type="text" id="venue" placeholder="Enter venue name here" />
+        <label for="city">CITY, STATE</label>
+        <input
+          type="text"
+          id="city"
+          placeholder="Enter city and state name here"
+        />
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep4()"
+          class="back"
+          value="&#60; Back"
+        />
+        <div class="error">Please Select an option</div>
+        <input
+          type="submit"
+          for="form5"
+          onclick="goToStep6()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <form class="container step6">
+      <h3 class="title">Reception Information</h3>
+      <p class="subtitle">Add details about your venue</p>
+      <div class="form">
+        <label>
+          <input type="radio" name="reception" data-index="1" />
+          <span>Reception to follow</span>
+        </label>
+        <label>
+          <input type="radio" name="reception" data-index="2" />
+          <span>Dinner and dancing to follow</span>
+        </label>
+        <div>
+          <input type="radio" name="reception" data-index="3" />
+          <span class="edit" contenteditable="true"> Type to customize </span>
+        </div>
+        <label>
+          <input type="radio" name="reception" data-index="4" />
+          <span>Skip</span>
+        </label>
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep5()"
+          class="back"
+          value="&#60; Back"
+        />
+        <div class="error">Please Select an option</div>
+        <input
+          type="button"
+          onclick="goToStep8()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form>
+    <!-- <form id="form7" class="container step7">
+      <h3 class="title">Would You Like to Specify Dress Code?</h3>
+      <div class="form">
+        <div class="flex">
+          <label>
+            <input type="radio" data-index="1" name="dress-code" />
+            <span class="custom-radio">
+              <i class="fas fa-check-circle"></i>
+              <div class="btn">
+                <span>Yes</span>
+              </div>
+            </span>
+          </label>
+          <label>
+            <input type="radio" data-index="2" name="dress-code" />
+            <span class="custom-radio">
+              <i class="fas fa-check-circle"></i>
+              <div class="btn">
+                <span>No</span>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="buttons">
+        <input
+          type="button"
+          onclick="goToStep6()"
+          class="back"
+          value="&#60; Back"
+        />
+        <input
+          type="button"
+          onclick="goToStep8()"
+          class="next"
+          value="Next &#62;"
+        />
+      </div>
+    </form> -->
+    <form class="container step8">
+      <div class="formFill"></div>
+      <div class="info">
+        <span onclick="generatePdf()" class="btn">Download</span>
+        <span onclick="goToStart()" id="start" class="btn">Start Over</span>
+      </div>
+    </form>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

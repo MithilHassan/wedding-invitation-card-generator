@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.container {
+  height: 500px;
+  width: 800px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container.step1,
+.container.step2,
+.container.step3_1,
+.container.step3_2,
+.container.step4,
+.container.step5,
+.container.step6,
+.container.step7,
+.container.step8 {
+  display: none;
+}
+.start .image {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+}
+.info {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.start .btn,
+.step8 .btn {
+  padding: 1rem 2rem;
+  background: #00b97c;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: all linear 0.3s;
+  cursor: pointer;
+}
+.step8 .btn {
+  padding: 1rem 9rem;
+}
+.start .btn:hover {
+  filter: brightness(1.1);
+}
+
+/* ======================================== */
+
+.form {
+  width: 80%;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.formFill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.5rem;
+  background: #f5f6fa;
+  text-align: center;
+}
+.formFill .line::before {
+  content: "-----------------------------";
+}
+.formFill .line::after {
+  content: "-----------------------------";
+}
+.formFill h1 {
+  font-weight: 500;
+}
+.title {
+  margin-top: 3rem;
+  font-size: 2rem;
+
+  font-weight: 400;
+  text-align: center;
+}
+.subtitle {
+  margin: 1rem;
+  text-align: center;
+}
+label {
+  font-size: 1rem;
+}
+.step2 label,
+.step4 label,
+.step6 label {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.form p {
+  text-align: center;
+}
+input[type="text"] {
+  width: 100%;
+  color: #777;
+  border: none;
+  border-bottom: 1px solid #777;
+  padding: 1rem 0rem;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+input[type="radio"] {
+  margin-right: 1rem;
+}
+input::placeholder {
+  color: #777;
+  font-weight: 300;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.buttons input {
+  color: #00b97c;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+}
+.btn:hover,
+.buttons span:hover {
+  filter: brightness(1.1);
+}
+.step3 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ======Step 7 ========*/
+
+.radio-image {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.radio-image img {
+  height: 100px;
+  width: 100px;
+}
+input[name="wedding-tone"],
+input[name="dress-code"] {
+  opacity: 0;
+}
+.custom-radio i {
+  color: #00b97c;
+  font-size: 40px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  transform: scale(0);
+  background: #fff;
+  transition: all linear 0.3s;
+}
+.step3_1 .custom-radio {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #00b97c;
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.step7 .custom-radio {
+  height: 80px;
+  width: 200px;
+  border: 1px solid #00b97c;
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.custom-radio .btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[name="wedding-tone"]:checked + .custom-radio i,
+input[name="dress-code"]:checked + .custom-radio i {
+  transform: scale(1);
+}
+.edit {
+  border-bottom: 1px solid;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
