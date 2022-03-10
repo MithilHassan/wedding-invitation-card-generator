@@ -174,7 +174,7 @@ function goToStep5() {
 function goToStep6() {
   step5.style.display = "none";
   step6.style.display = "block";
-  step7.style.display = "none";
+  step8.style.display = "none";
 }
 function goToStep7() {
   step6.style.display = "none";
@@ -220,7 +220,7 @@ reception.forEach((rcpt) => {
 const form7 = document.getElementById("form7");
 
 function goToStep8() {
-  // step7.style.display = "none";
+  step6.style.display = "none";
   step8.style.display = "block";
   const name1 = localStorage.getItem("name1");
   const name2 = localStorage.getItem("name2");
